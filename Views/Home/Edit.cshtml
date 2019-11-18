@@ -1,0 +1,15 @@
+﻿@model Employee
+@{
+    ViewBag.Title = "编辑";
+}
+<h3>编辑页面</h3>
+<form asp-action="Edit" method="post">
+    <div>
+        <label asp-for="Name">姓名</label>
+        <input asp-for="Name" />
+        <span asp-validation-for="Name"></span>
+    </div>
+    <div>
+        <input type="submit" value="保存" />
+    </div>
+</form>

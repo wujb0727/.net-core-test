@@ -1,0 +1,36 @@
+﻿@*@using HelloWorld.Controllers*@
+
+@model HomePageViewModel
+@{
+    ViewBag.Title = "首页";
+    //Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h3>这个消息来自 Home 控制器下的 Index 的视图文件 index.cshtml </h3>
+@*@ViewData["emp"]
+    @ViewBag.emp
+    @Model.Name*@
+
+<table>
+    <tr>
+        <th>ID</th>
+        <th>姓名</th>
+        <th>操作</th>
+    </tr>
+    @foreach (var employee in Model.Employees)
+    {
+        <tr>
+            @*<td><a href="/Home/Detail/@employee.ID">@employee.ID</a></td>*@
+            @*<td>@Html.ActionLink(employee.ID.ToString(), "Detail", new { id = employee.ID })</td>*@
+
+            <td>@employee.ID</td>
+            <td>@employee.Name</td>
+            <td>
+                <a asp-action="Detail" asp-route-id="@employee.ID">详情</a>&nbsp;
+                <a asp-controller="Home" asp-action="Edit" asp-route-id="@employee.ID">编辑</a>
+            </td>
+
+        </tr>
+    }
+</table>
+<p><a asp-action="Create">新增</a></p>

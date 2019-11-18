@@ -1,0 +1,25 @@
+﻿@model LoginViewModel
+@{
+    ViewBag.Title = "登录";
+}
+<h3>登录</h3>
+<form asp-controller="Account" asp-action="Login" asp-route-returnurl="@Model.ReturnUrl" method="post">
+    <div>
+        <label asp-for="UserName">用户名</label>
+        <input asp-for="UserName" />
+        <span asp-validation-for="UserName"></span>
+    </div>
+    <div>
+        <label asp-for="Password">密码</label>
+        <input asp-for="Password" />
+        <span asp-validation-for="Password"></span>
+    </div>
+    <div>
+        <label asp-for="RememberMe">记住账号</label>
+        <input asp-for="RememberMe" />
+        <span asp-validation-for="RememberMe"></span>
+    </div>
+    <div>
+        <input type="submit" name="submit" value="登录" />
+    </div>
+</form>

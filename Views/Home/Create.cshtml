@@ -1,0 +1,16 @@
+﻿@model Employee
+@{
+    ViewBag.Title = "新增";
+}
+<h3>新增</h3>
+@using (Html.BeginForm())
+{
+    <div>
+        @Html.LabelFor(m=>m.Name)
+        @Html.EditorFor(m=>m.Name)
+        @Html.ValidationMessageFor(m=>m.Name)
+    </div>
+    <div>
+        <input type="submit" name="name" value="确定" />
+    </div>
+}
